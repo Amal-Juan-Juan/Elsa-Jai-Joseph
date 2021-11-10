@@ -6,7 +6,6 @@
 :root {
   --ff-primary: "Source Sans Pro", sans-serif;
   --ff-secondary: "Source Code Pro", monospace;
-  --ff-teritiary: "Lato", sans-serif;
 
   --fw-reg: 300;
   --fw-bold: 900;
@@ -33,8 +32,9 @@ html {
 }
 
 body {
-  background: var(--clr-light);
-  /* background: radial-gradient(#122755,#142d63,#202530); */
+  background: linear-gradient(-45deg, #06266f,#001B87,#0058B3,  #00A6D7, #30E7ED, #86FAF2);
+  background-size: 400% 400%;
+  animation: gradient 5s ease infinite;
   color: var(--clr-dark);
   margin: 0px;
   font-family: var(--ff-primary);
@@ -42,8 +42,16 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
 }
-img {
-  display: flex;
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 :focus {
@@ -61,7 +69,7 @@ img {
   font-size: 0.85em;
   text-transform: capitalize;
   font-weight: var(--fw-bold);
-  transition: transform 300ms ease-in-out;
+  transition: transform 200ms ease-in-out;
 }
 .btn:hover {
   transform: scale(1.1);
@@ -208,7 +216,7 @@ header {
 section {
   padding: 5em 6em;
   border-radius: 48%;
-  margin: 4px;
+  margin: 3px;
 }
 
 .intro {
@@ -219,26 +227,6 @@ section {
 }
 .section-title-intro {
   color: #faf6f2;
-}
-.section-subtitle-intro {
-  display: inline-block;
-  color: #faf6f2;
-}
-.intro {
-  grid-template-areas:
-    "img title"
-    "img subtitle";
-  grid-template-columns: min-content max-content;
-}
-
-.section-subtitle-intro {
-  align-self: start;
-  grid-column: -1/1;
-  grid-row: 2;
-  text-align: right;
-  position: relative;
-  left: -1.15em;
-  width: calc(100% + 2.25em);
 }
 
 .content {
@@ -257,8 +245,6 @@ section {
 .my-services {
   background-color: var(--clr-dark);
   color: var(--clr-light);
-  background-size: cover;
-  background-blend-mode: soft-light;
   text-align: center;
   border-radius: 25%;
 }
@@ -306,12 +292,10 @@ h3 {
   color: var(--clr-light);
   max-width: 1500px;
   margin: 0 auto;
+  padding: 5em 8em;
 }
 
 .section-subtitle-about {
-  grid-column: 1/-1;
-  grid-row: 2;
-
   position: relative;
   left: -1em;
   width: calc(100%+2em);
@@ -319,10 +303,8 @@ h3 {
   padding-right: calc(200px+4em);
   padding-bottom: 0;
 }
-.about-me-img {
-  grid-area: img;
-  position: relative;
-  z-index: 2;
+.about-body{
+  text-align: justify;
 }
 
 .my-work {
@@ -384,11 +366,11 @@ h3 {
   transition: opacity 0.3s ease-in 0.4s;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .portfolio {
     width: 100vw;
   }
-  .panel:nth-last-of-type(4) {
+  .panel:nth-last-of-type(1) {
     display: none;
   }
 }

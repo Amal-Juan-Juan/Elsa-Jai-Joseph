@@ -27,6 +27,11 @@
     --fs-body: 1.125rem;
   }
 }
+html,body{
+  /* height: 100%;
+  width: 100%; */
+  overflow-x: hidden;
+}
 html {
   scroll-behavior: smooth;
 }
@@ -219,6 +224,8 @@ section {
   margin: 3px;
 }
 
+
+
 .intro {
   position: relative;
   background-image: url("img/dominik-lange-Lej_oqHljbk-unsplash.jpg");
@@ -318,7 +325,13 @@ h3 {
   font-weight: var(--fw-bold);
   margin-bottom: 2em;
 }
-
+@media (max-width: 800px){
+  .intro,.my-work,.my-services,.about-me,footer{
+    border-radius: 5%;
+    padding: 1em;
+    margin: 3px;
+  }
+}
 .blogs {
   font-family: var(--fs-h2);
   display: flex;
